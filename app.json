@@ -1,0 +1,12 @@
+{
+  "name": "hn-hn",
+  "displayName": "hn-hn",
+  "expo": {
+    "name": "hn-hn",
+    "slug": "hn-hn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
