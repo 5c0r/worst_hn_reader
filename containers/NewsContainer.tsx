@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text} from 'react-native'
 
-export default function NewsContainer({ route, navigation}) {
+export default function NewsContainer({ route, navigation }) {
 
     const [ news, setNews] = useState({});
     const { newsId } = route.params;
 
     useEffect(() => {
-        fetch(`http://hn.algolia.com/api/v1/items/${newsId}`)
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json`)
         .then( res => res.json())
         .then(setNews);
     }, [])
@@ -15,9 +15,9 @@ export default function NewsContainer({ route, navigation}) {
     return (
         <View>
             <Text>News Container</Text>
-            <Text>{news.url}</Text>
             <Text>{news.title}</Text>
-            <Text>{news.text}</Text>
+            <Text>{news.type}</Text>
+            <Text>{news.url}</Text>
         </View>
     )
 }
